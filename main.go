@@ -24,21 +24,6 @@ func main() {
 	guildID := os.Getenv("HOLE_GUILD_ID")
 	ignoreBots := os.Getenv("HOLE_IGNORE_BOTS")
 
-	if addr == "" {
-		die("$HOLE_ADDR is blank")
-		return
-	}
-
-	if token == "" {
-		die("$HOLE_TOKEN is blank")
-		return
-	}
-
-	if guildID == "" {
-		die("$HOLE_GUILD_ID is blank")
-		return
-	}
-
 	srv, err := web.New(&web.Options{
 		Addr:       addr,
 		Token:      token,
