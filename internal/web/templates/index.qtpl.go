@@ -109,7 +109,7 @@ func (p *IndexPage) StreamBody(qw422016 *qt422016.Writer) {
     <p class="subtitle">Notice: the official Casa de Hole website is maintained by an idiot. This information can be copied and distributed, however, any unauthorized alteration of any portion of the Casa de Hole website is a violation of my nuts.</p>
 
     <h1 id="weapon-sex-title" class="title">Weapon Sex</h1>
-    <p class="subtitle">The most notorious members of the Hole. <span class="warning">SHOULD ALWAYS BE CONSIDERED ARMED AND DANGEROUS (AND MOSTLY GAY)</span>. If you encounter any of these members, <span class="warning">DO NOT APPROACH</span>.</p>
+    <p class="subtitle">The most notorious members of the Hole. <span class="warning">SHOULD ALWAYS BE CONSIDERED ARMED AND DANGEROUS (AND MOSTLY GAY)</span>. If you encounter any of these individuals, <span class="warning">DO NOT APPROACH</span>.</p>
 </header>
 <main id="content">
     <div id="container">
