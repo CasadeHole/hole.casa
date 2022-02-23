@@ -2,6 +2,7 @@
 
 :root {
     --background-color: #272b24;
+    --background-darker: #1e211c;
     --text-color: #e4ebdf;
     --text-highlight: #b87279;
 }
@@ -15,10 +16,10 @@
         grid-template-areas:
             ". . ."
             ". header ."
-            "b b b";
+            ". b .";
     
-        grid-template-columns: 25% 1fr 25%;
-        grid-template-rows: 1fr 25% 50%;
+        grid-template-columns: .2fr 1fr .2fr;
+        grid-template-rows: .1fr .3fr .5fr;
     
     
         background-color: var(--background-color);
@@ -53,17 +54,38 @@
     
     #content {
         grid-area: b;
-        display: flex;
-    }
-    
-    #member-image {
-        border-radius: 5%;
+        margin-top: -3rem;
     }
 
+    #container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
     #no-bitches {
-        align-self: center;
-        grid-column: 2 / 3;
-        font: "Georgia";
+        font-family: "Georgia";
+        font-size: 22px;
         color: var(--text-color);
+        align-self: center;
+    }
+
+    .member {
+        color: var(--text-color);
+        font-family: "Georgia";
+        text-align: center;
+        padding: 15px;
+        border-radius: 5px;
+
+        background-color: var(--background-darker);
+    }
+
+    .member:not(:last-child) {
+        margin-right: 1rem;
+    }
+
+    .member > img {
+        border-radius: 50%;
     }
 }

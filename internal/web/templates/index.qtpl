@@ -29,8 +29,17 @@ Casa de Hole
     <p class="subtitle">The most notorious members of the Hole. <span class="warning">SHOULD ALWAYS BE CONSIDERED ARMED AND DANGEROUS (AND MOSTLY GAY)</span>. If you encounter any of these members, <span class="warning">DO NOT APPROACH</span>.</p>
 </header>
 <main id="content">
-    {% if len(p.Members) > 0 %}
-        <h1 id="no-bitches">The streets are safe.</h1>
-    {% endif %}
+    <div id="container">
+        {% if len(p.Members) == 0 %}
+            <img id="no-bitches" src="/static/no-bitches.jpg">
+        {% else %}
+            {% for _, m := range p.Members %}
+                <div class="member">
+                    <img src="{%s m.AvatarURL %}">
+                    <p>{%s m.Name %}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
 </main>
 {% endfunc %}

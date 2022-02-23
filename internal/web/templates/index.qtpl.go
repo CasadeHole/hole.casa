@@ -112,44 +112,73 @@ func (p *IndexPage) StreamBody(qw422016 *qt422016.Writer) {
     <p class="subtitle">The most notorious members of the Hole. <span class="warning">SHOULD ALWAYS BE CONSIDERED ARMED AND DANGEROUS (AND MOSTLY GAY)</span>. If you encounter any of these members, <span class="warning">DO NOT APPROACH</span>.</p>
 </header>
 <main id="content">
-    `)
-//line internal/web/templates/index.qtpl:32
-	if len(p.Members) > 0 {
-//line internal/web/templates/index.qtpl:32
+    <div id="container">
+        `)
+//line internal/web/templates/index.qtpl:33
+	if len(p.Members) == 0 {
+//line internal/web/templates/index.qtpl:33
 		qw422016.N().S(`
-        <h1 id="no-bitches">The streets are safe.</h1>
-    `)
-//line internal/web/templates/index.qtpl:34
+            <img id="no-bitches" src="/static/no-bitches.jpg">
+        `)
+//line internal/web/templates/index.qtpl:35
+	} else {
+//line internal/web/templates/index.qtpl:35
+		qw422016.N().S(`
+            `)
+//line internal/web/templates/index.qtpl:36
+		for _, m := range p.Members {
+//line internal/web/templates/index.qtpl:36
+			qw422016.N().S(`
+                <div class="member">
+                    <img src="`)
+//line internal/web/templates/index.qtpl:38
+			qw422016.E().S(m.AvatarURL)
+//line internal/web/templates/index.qtpl:38
+			qw422016.N().S(`">
+                    <p>`)
+//line internal/web/templates/index.qtpl:39
+			qw422016.E().S(m.Name)
+//line internal/web/templates/index.qtpl:39
+			qw422016.N().S(`</p>
+                </div>
+            `)
+//line internal/web/templates/index.qtpl:41
+		}
+//line internal/web/templates/index.qtpl:41
+		qw422016.N().S(`
+        `)
+//line internal/web/templates/index.qtpl:42
 	}
-//line internal/web/templates/index.qtpl:34
+//line internal/web/templates/index.qtpl:42
 	qw422016.N().S(`
+    </div>
 </main>
 `)
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 }
 
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 func (p *IndexPage) WriteBody(qq422016 qtio422016.Writer) {
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 	qw422016 := qt422016.AcquireWriter(qq422016)
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 	p.StreamBody(qw422016)
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 	qt422016.ReleaseWriter(qw422016)
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 }
 
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 func (p *IndexPage) Body() string {
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 	qb422016 := qt422016.AcquireByteBuffer()
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 	p.WriteBody(qb422016)
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 	qs422016 := string(qb422016.B)
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 	qt422016.ReleaseByteBuffer(qb422016)
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 	return qs422016
-//line internal/web/templates/index.qtpl:36
+//line internal/web/templates/index.qtpl:45
 }
