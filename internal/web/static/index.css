@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root {
+    --background-color: #272b24;
+    --text-color: #e4ebdf;
+    --text-highlight: #b87279;
+}
+
+@media (min-width: 769px) {
+    body {
+        display: grid;
+    
+        row-gap: 100px;
+    
+        grid-template-areas:
+            ". . ."
+            ". header ."
+            "b b b";
+    
+        grid-template-columns: 25% 1fr 25%;
+        grid-template-rows: 1fr 25% 50%;
+    
+    
+        background-color: var(--background-color);
+    }
+    
+    .title {
+        font-family: "Permanent Marker";
+        font-size: 37px;
+        color: var(--text-color);
+        text-align: center;
+    }
+    
+    .subtitle {
+        margin-top: -1.5rem;
+        font-family: "Georgia";
+        font-size: 24px;
+        color: var(--text-color);
+        text-align: center;
+    }
+    
+    .warning {
+        color: var(--text-highlight);
+    }
+    
+    #header {
+        grid-area: header;
+    }
+    
+    #weapon-sex-title {
+        margin-top: 2rem;
+    }
+    
+    #content {
+        grid-area: b;
+        display: flex;
+    }
+    
+    #member-image {
+        border-radius: 5%;
+    }
+
+    #no-bitches {
+        align-self: center;
+        grid-column: 2 / 3;
+        font: "Georgia";
+        color: var(--text-color);
+    }
+}

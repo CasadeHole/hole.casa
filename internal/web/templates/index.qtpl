@@ -1,0 +1,36 @@
+{% code type Member struct {
+    Name string `json:"name"`
+    Nick string `json:"nick"`
+    AvatarURL string `json:"avatar_url"`
+    Bot bool `json:"bot"`
+}
+%}
+
+{% code
+type IndexPage struct {
+    Members []*Member
+}
+%}
+
+{% func (p *IndexPage) Title() %}
+Casa de Hole
+{% endfunc %}
+
+{% func (p *IndexPage) Head() %}
+<link rel="stylesheet" href="/static/index.css">
+{% endfunc %}
+
+{% func (p *IndexPage) Body() %}
+<header id="header">
+    <h1 class="title">Casa de Hole</h1>
+    <p class="subtitle">Notice: the official Casa de Hole website is maintained by an idiot. This information can be copied and distributed, however, any unauthorized alteration of any portion of the Casa de Hole website is a violation of my nuts.</p>
+
+    <h1 id="weapon-sex-title" class="title">Weapon Sex</h1>
+    <p class="subtitle">The most notorious members of the Hole. <span class="warning">SHOULD ALWAYS BE CONSIDERED ARMED AND DANGEROUS (AND MOSTLY GAY)</span>. If you encounter any of these members, <span class="warning">DO NOT APPROACH</span>.</p>
+</header>
+<main id="content">
+    {% if len(p.Members) > 0 %}
+        <h1 id="no-bitches">The streets are safe.</h1>
+    {% endif %}
+</main>
+{% endfunc %}
