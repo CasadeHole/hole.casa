@@ -14,6 +14,16 @@ Page {
 		<title>{%= p.Title() %}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<meta property="og:title" content="{%= p.Title() %}">
+		<meta property="og:description" content="Casa de Hole is offering nothing for the apprehension of some idiots.">
+		<meta property="og:image" content="/static/hole.jpg">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://www.hole.casa">
+
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@CasadeHole">
+		<meta name="twitter:creator" content="@holedaemon">
+
 		{%= p.Head() %}
 	</head>
 	<body>
