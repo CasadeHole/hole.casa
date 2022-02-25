@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
+	"strconv"
 	"strings"
 
 	"github.com/holedaemon/hole.casa/internal/web"
@@ -24,11 +25,16 @@ func main() {
 	guildID := os.Getenv("HOLE_GUILD_ID")
 	ignoreBots := os.Getenv("HOLE_IGNORE_BOTS")
 
+	igb, err := strconv.ParseBool(ignoreBots)
+	if err != nil {
+		igb = false
+	}
+
 	srv, err := web.New(&web.Options{
 		Addr:       addr,
 		Token:      token,
 		GuildID:    guildID,
-		IgnoreBots: ignoreBots != "" && ignoreBots != "false",
+		IgnoreBots: igb,
 	})
 	if err != nil {
 		die("error creating server: %s", err)
